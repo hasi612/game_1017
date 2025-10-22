@@ -30,11 +30,12 @@ form.addEventListener('submit', async (e) => {
   };
 
   try {
-    await fetch(WEB_APP_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      body: JSON.stringify(data)
-    });
+   await fetch('https://script.google.com/macros/s/AKfycbyqXDRB-DbfCVKLS2pYaGPF0fo8v2UwfYm1WtQ8jboztmG9GBJtkgpqGTt_eKpAmXlboA/exec', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },  // <- 반드시 필요
+  body: JSON.stringify(data)
+});
+
 
     alert('💝 설문이 성공적으로 제출되었습니다!');
     form.reset();
