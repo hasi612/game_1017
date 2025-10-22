@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const WEB_APP_URL = '👉여기에_본인_웹앱_URL_붙여넣기👈';
+    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyQze_C3U54jNhtzZneFfPsIBbwX-1IVE6fSJ9_M_4bwlSV_3xw4Cs2LfqZL5NPK9dOkA/exec';
     const form = document.getElementById('servey-form');
 
     form.addEventListener('submit', async (e) => {
