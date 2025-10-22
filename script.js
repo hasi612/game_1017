@@ -2,7 +2,7 @@
 console.log('✅ JS 파일 연결됨');
 
 const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyqXDRB-DbfCVKLS2pYaGPF0fo8v2UwfYm1WtQ8jboztmG9GBJtkgpqGTt_eKpAmXlboA/exec';
-const form = document.getElementById('survey-form'); // ✅ 수정됨
+const form = document.getElementById('survey-form'); // survey-form으로 바꿈
 
 if (!form) {
   console.error('❌ form 요소를 찾을 수 없습니다. ID를 확인하세요.');
