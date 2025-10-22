@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const WEB_APP_URL = '👉여기에_본인_웹앱_URL_붙여넣기👈';
-    const form = document.getElementById('record-form');
+    const form = document.getElementById('servey-form');
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
