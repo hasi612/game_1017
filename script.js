@@ -7,7 +7,8 @@ const form = document.getElementById('survey-form'); // survey-form으로 바꿈
 if (!form) {
   console.error('❌ form 요소를 찾을 수 없습니다. ID를 확인하세요.');
 } else {
-  console.log('✅ form 연결 성공');
+  console.log('✅ JS 파일 연결됨');
+console.log('✅ form:', form);
 }
 
 form.addEventListener('submit', async (e) => {
