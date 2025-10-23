@@ -70,7 +70,7 @@ textarea {
     resize: vertical;
 }
 
-payReason {
+.payReason {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -109,7 +109,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #FF8A65; /* Deeper Pastel Coral */
+    background-color: #FF8A65;
 }
 
 .chart-container {
@@ -131,21 +131,6 @@ button[type="submit"]:hover {
     color: var(--secondary-color);
 }
 
-#stats-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-#stats-container p {
-    font-size: 1.1rem;
-}
-
-#stats-container span {
-    font-weight: 700;
-}
-
 .section-header {
     display: flex;
     justify-content: space-between;
@@ -157,7 +142,8 @@ button[type="submit"]:hover {
 
 .records-section h2 {
     margin-bottom: 0;
-    text-align: left;
+    text-align: center;
+    color: var(--secondary-color);
 }
 
 #export-excel {
@@ -173,26 +159,19 @@ button[type="submit"]:hover {
 }
 
 #export-excel:hover {
-    background-color: #FFD54F; /* Lighter Amber */
+    background-color: #FFD54F;
 }
 
-.records-section h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: var(--secondary-color);
-}
-
-/* 게시판 목록 스타일 */
 .records-list-container {
     background-color: var(--card-background);
     border-radius: 12px;
     box-shadow: 0 4px 15px var(--shadow-color);
-    overflow: hidden; /* 자식 요소의 radius 적용을 위해 */
+    overflow: hidden;
 }
 
 .records-header, .record-row {
     display: grid;
-    grid-template-columns: 120px 1fr 120px 100px 80px;  
+    grid-template-columns: 120px 120px 120px 120px 1fr;  
     gap: 15px;
     padding: 15px 20px;
     align-items: center;
@@ -206,10 +185,6 @@ button[type="submit"]:hover {
     border-bottom: 2px solid var(--border-color);
 }
 
-.records-header > div:nth-child(3) {
-    /* 반응 헤더 */
-}
-
 .record-row:last-child {
     border-bottom: none;
 }
@@ -217,34 +192,6 @@ button[type="submit"]:hover {
 .record-row:hover {
     background-color: #fefcf5;
 }
-
-.record-type.deed {
-    color: #FFC107;
-    font-weight: 700;
-}
-
-.record-type.help {
-    color: #FF7043;
-    font-weight: 700;
-}
-
-.record-content {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.record-date {
-    font-size: 0.9rem;
-    color: #757575;
-    text-align: center;
-}
-
-.record-weeklyGame {
-    font-size: 1.2rem;
-    text-align: center;
-}
-
 
 footer {
     text-align: center;
@@ -255,59 +202,37 @@ footer {
     color: #757575;
 }
 
-
 /* Responsive Design */
 @media (max-width: 768px) {
-  .records-header {
-    display: none; /* 모바일에서는 헤더 숨김 */
-  }
+    .records-header {
+        display: none;
+    }
 
-  .records-list-container {
-    background-color: transparent;
-    box-shadow: none;
-  }
+    .records-list-container {
+        background-color: transparent;
+        box-shadow: none;
+    }
 
-  .record-row {
-    display: flex;                /* 가로 정렬 */
-    flex-wrap: wrap;              /* 필요 시 줄바꿈 */
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 1px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 15px var(--shadow-color);
-    background-color: var(--card-background);
-    padding: 15px;
-  }
+    .record-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 15px;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 4px 15px var(--shadow-color);
+        background-color: var(--card-background);
+        padding: 20px;
+    }
 
-  .record-row > div {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-  }
+    .record-row > div::before {
+        font-weight: 700;
+        margin-right: 10px;
+        color: var(--secondary-color);
+    }
 
-  .record-row > div::before {
-    font-weight: 700;
-    margin-right: 5px;
-    color: var(--secondary-color);
-  }
-
-  .record-weeklyGames::before { content: '개수:'; }
-  .record-dailyHours::before { content: '시간:'; }
-  .record-payStatus::before { content: '여부:'; }
-  .record-payAmount::before { content: '금액:'; }
-  .record-payReason::before { content: '이유:'; }
-
-  .record-content {
-    white-space: normal;
-    overflow: visible;
-    text-overflow: initial;
-  }
-
-  .record-date,
-  .record-game {
-    text-align: left;
-  }
+    .record-row > div:nth-child(1)::before { content: '주간 게임 수: '; }
+    .record-row > div:nth-child(2)::before { content: '하루 플레이: '; }
+    .record-row > div:nth-child(3)::before { content: '과금 여부: '; }
+    .record-row > div:nth-child(4)::before { content: '금액: '; }
+    .record-row > div:nth-child(5)::before { content: '이유: '; }
 }
-
