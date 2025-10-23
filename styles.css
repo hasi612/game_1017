@@ -255,48 +255,60 @@ footer {
     color: #757575;
 }
 
+
 /* Responsive Design */
 @media (max-width: 768px) {
-    .records-header {
-        display: none; /* 모바일에서는 헤더 숨김 */
-    }
+  .records-header {
+    display: none; /* 모바일에서는 헤더 숨김 */
+  }
 
-    .records-list-container {
-        background-color: transparent;
-        box-shadow: none;
-    }
+  .records-list-container {
+    background-color: transparent;
+    box-shadow: none;
+  }
 
-    .record-row {
-        grid-template-columns: 1fr; /* 1열로 변경 */
-        gap: 10px;
-        margin-bottom: 15px;
-        border-radius: 12px;
-        border: 1px solid var(--border-color);
-        box-shadow: 0 4px 15px var(--shadow-color);
-        background-color: var(--card-background);
-        padding: 20px;
-    }
+  .record-row {
+    display: flex;                /* 가로 정렬 */
+    flex-wrap: wrap;              /* 필요 시 줄바꿈 */
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px var(--shadow-color);
+    background-color: var(--card-background);
+    padding: 15px;
+  }
 
-    .record-row > div::before {
-        font-weight: 700;
-        margin-right: 10px;
-        color: var(--secondary-color);
-    }
+  .record-row > div {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+  }
 
-    .record-age::before { content: '연령대: '; }
-    .record-date::before { content: '날짜: '; }
-    .record-dailyHours::before { content: '시간: '; }
-    .record-payStatus::before { content: '여부: '; }
-  .recorod-payAmount::before { content: '금액: '; }
-  .recorod-payReason::before { content: '이유: '; }
+  .record-row > div::before {
+    font-weight: 700;
+    margin-right: 5px;
+    color: var(--secondary-color);
+  }
 
-    .record-content {
-        white-space: normal;
-        overflow: visible;
-        text-overflow: initial;
-    }
+  .record-age::before { content: '연령대:'; }
+  .record-date::before { content: '날짜:'; }
+  .record-dailyHours::before { content: '시간:'; }
+  .record-payStatus::before { content: '여부:'; }
+  .record-payAmount::before { content: '금액:'; }
+  .record-payReason::before { content: '이유:'; }
 
-    .record-date, .record-game {
-        text-align: left;
-    }
+  .record-content {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: initial;
+  }
+
+  .record-date,
+  .record-game {
+    text-align: left;
+  }
 }
+
