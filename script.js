@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbz-bZbyoV1zxr5k5QeoBcBuIg0V9L3CAqoBrrwBF3wQGVAuk4CtSBCUQzdDKdK7KZhAgw/exec'; // <- 반드시 변경
 
-    const form = document.getElementById('survey-form');
+   const form = document.getElementById('survey-form');
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
