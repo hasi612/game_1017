@@ -16,8 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const formData = new FormData(recordForm);
     const data = {
-      age: formData.get('age'),
-      date: formData.get('date'),
+
       weeklyGames: formData.get('weeklyGames'),
       dailyHours: formData.get('dailyHours'),
       payStatus: formData.get('payStatus'),
