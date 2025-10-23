@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbz-bZbyoV1zxr5k5QeoBcBuIg0V9L3CAqoBrrwBF3wQGVAuk4CtSBCUQzdDKdK7KZhAgw/exec'; // 배포 URL
+  const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyPFnKGRDrShTpK-9I9ZBNepmIiSImXmDITM5-Qa8V5L5UEpTWhX3GYNxebNLPYUGsW3A/exec'; // 배포 URL
 
   const recordForm = document.getElementById('record-form');
   const recordsContainer = document.getElementById('records-container');
