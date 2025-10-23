@@ -1,45 +1,47 @@
-// script.js
 document.addEventListener('DOMContentLoaded', () => {
-    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbz-bZbyoV1zxr5k5QeoBcBuIg0V9L3CAqoBrrwBF3wQGVAuk4CtSBCUQzdDKdK7KZhAgw/exec'; // <- 반드시 변경
+  const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbz-bZbyoV1zxr5k5QeoBcBuIg0V9L3CAqoBrrwBF3wQGVAuk4CtSBCUQzdDKdK7KZhAgw/exec'; // 배포 URL
 
-   const form = document.getElementById('survey-form');
+  const recordForm = document.getElementById('record-form');
+  const recordsContainer = document.getElementById('records-container');
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
+  // 오늘 날짜 기본 설정
+  document.getElementById('date').value = new Date().toISOString().split('T')[0];
 
-        const submitBtn = form.querySelector('button[type="submit"]');
-        submitBtn.disabled = true;
-        submitBtn.textContent = '💌 제출 중...';
+  // 데이터 전송
+  recordForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const submitButton = e.target.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.textContent = '저장 중...';
 
-        const formData = new FormData(form);
-        const data = {
-            age: formData.get('age'),
-            weeklyGames: formData.get('weekly-games'),
-            dailyHours: formData.get('daily-hours'),
-            payStatus: formData.get('pay-status'),
-            payReason: formData.get('pay-reason'),
-            payAmount: formData.get('pay-amount'),
-            paySource: formData.get('pay-source')
-        };
+    const formData = new FormData(recordForm);
+    const data = {
+      age: formData.get('age'),
+      date: formData.get('date'),
+      weeklyGames: formData.get('weeklyGames'),
+      dailyHours: formData.get('dailyHours'),
+      payStatus: formData.get('payStatus'),
+      payAmount: formData.get('payAmount'),
+      mood: formData.get('pay-reason')
+    };
 
-        try {
-            const response = await fetch('https://script.google.com/macros/s/AKfycbz-bZbyoV1zxr5k5QeoBcBuIg0V9L3CAqoBrrwBF3wQGVAuk4CtSBCUQzdDKdK7KZhAgw/exec', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' }, // 필수
-                body: JSON.stringify(data)
-            });
+    try {
+      await fetch(WEB_APP_URL, {
+        method: 'POST',
+        mode: 'no-cors', // 중요! CORS 방지용
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
 
-            const result = await response.json(); // Apps Script가 JSON으로 반환한다고 가정
-            console.log(result);
-
-            alert('💝 설문이 성공적으로 제출되었습니다!');
-            form.reset();
-        } catch (error) {
-            console.error('전송 오류:', error);
-            alert('⚠️ 제출 중 오류가 발생했습니다. 인터넷 연결을 확인해주세요.');
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = '💝 제출하기';
-        }
-    });
+      alert('💝 설문이 성공적으로 제출되었습니다!');
+      recordForm.reset();
+      document.getElementById('date').value = new Date().toISOString().split('T')[0];
+    } catch (err) {
+      console.error('전송 오류:', err);
+      alert('⚠️ 제출 중 오류가 발생했습니다.');
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = '기록하기';
+    }
+  });
 });
