@@ -293,8 +293,7 @@ footer {
     color: var(--secondary-color);
   }
 
-  .record-age::before { content: '연령대:'; }
-  .record-date::before { content: '날짜:'; }
+  .record-weeklyGames::before { content: '개수:'; }
   .record-dailyHours::before { content: '시간:'; }
   .record-payStatus::before { content: '여부:'; }
   .record-payAmount::before { content: '금액:'; }
