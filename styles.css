@@ -283,12 +283,12 @@ footer {
         color: var(--secondary-color);
     }
 
-    .record-type::before { content: '종류: '; }
-    .record-content::before { content: '내용: '; }
+    .record-age::before { content: '종류: '; }
     .record-date::before { content: '날짜: '; }
-    .record-status::before { content: '여부: '; }
-  .recorod-amount::before { content: '금액: '; }
-  .recorod-reason::before { content: '이유: '; }
+    .record-dailyHours::before { content: '시간: '; }
+    .record-payStatus::before { content: '여부: '; }
+  .recorod-payAmount::before { content: '금액: '; }
+  .recorod-payReason::before { content: '이유: '; }
 
     .record-content {
         white-space: normal;
