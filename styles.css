@@ -70,17 +70,17 @@ textarea {
     resize: vertical;
 }
 
-pay-reason {
+payReason {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
 
-.pay-reason input[type="radio"] {
+.payReason input[type="radio"] {
     display: none;
 }
 
-.pay-reason label {
+.payReason label {
     padding: 10px 15px;
     border: 1px solid var(--border-color);
     border-radius: 20px;
@@ -88,7 +88,7 @@ pay-reason {
     transition: all 0.3s ease;
 }
 
-.pay-reason input[type="radio"]:checked + label {
+.payReason input[type="radio"]:checked + label {
     background-color: var(--primary-color);
     color: var(--card-background);
     border-color: var(--primary-color);
@@ -240,7 +240,7 @@ button[type="submit"]:hover {
     text-align: center;
 }
 
-.record-mood {
+.record-game {
     font-size: 1.2rem;
     text-align: center;
 }
@@ -296,7 +296,7 @@ footer {
         text-overflow: initial;
     }
 
-    .record-date, .record-mood {
+    .record-date, .record-game {
         text-align: left;
     }
 }
