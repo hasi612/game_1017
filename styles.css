@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
 
 :root {
-    --primary-color: #FFC107; /* Amber */
-    --secondary-color: #FFAB91; /* Light Pastel Coral */
-    --background-color: #FFF8E1; /* Light Cream */
+    --primary-color: #32a852; /* Amber */
+    --secondary-color: #32a852; /* Light Pastel Coral */
+    --background-color: #000000; /* Light Cream */
     --card-background: #FFFFFF;
-    --text-color: #424242;
+    --text-color: #4d8a5e;
     --border-color: #E0E0E0;
-    --shadow-color: rgba(0, 0, 0, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.);
 }
 
 * {
@@ -286,7 +286,9 @@ footer {
     .record-type::before { content: '종류: '; }
     .record-content::before { content: '내용: '; }
     .record-date::before { content: '날짜: '; }
-    .record-mood::before { content: '기분: '; }
+    .record-mood::before { content: '여부: '; }
+  .recorod-mood::before { content: '금액: '; }
+  .recorod-mood::before { content: '이유: '; }
 
     .record-content {
         white-space: normal;
