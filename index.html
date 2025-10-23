@@ -9,105 +9,115 @@
 <body>
     <div class="container">
         <header>
-            <h1> 당신의 과금 현황</h1>
-           
+            <h1>과금요정</h1>
+            <p>당신은 과금을 얼마나 하나요</p>
         </header>
-<main>
-    <form id="survey-form">
-        <!-- 1. 연령대 -->
-        <div class="form-group">
-            <label for="age">1. 연령대 *</label>
-            <select id="age" name="age" required>
-                <option value="" disabled selected>연령대를 선택하세요</option>
-                <option value="10대">10대</option>
-                <option value="20대">20대</option>
-                <option value="30대">30대</option>
-                <option value="40대">40대</option>
-                <option value="50대">50대</option>
-                <option value="60대 이상">60대 이상</option>
-            </select>
-        </div>
+        <main>
+            <form id="record-form">
+  <div class="form-group">
+    <label for="age">연령대</label>
+    <select id="age" name="age">
+      <option value="10대">10대</option>
+      <option value="20대">20대</option>
+      <option value="30대">30대</option>
+      <option value="40대">40대</option>
+      <option value="50대 이상">50대 이상</option>
+    </select>
+  </div>
 
-        <!-- 2. 일주일에 몇 개의 게임 플레이 -->
-        <div class="form-group">
-            <label for="weekly-games">2. 일주일에 몇 개의 게임을 플레이하나요 *</label>
-            <select id="weekly-games" name="weekly-games" required>
-                <option value="" disabled selected>게임 개수를 선택하세요</option>
-                <option value="1개">1개</option>
-                <option value="2개">2개</option>
-                <option value="3개">3개</option>
-                <option value="4개">4개</option>
-                <option value="5개 이상">그 이상</option>
-            </select>
-        </div>
+  <div class="form-group">
+    <label for="date">날짜</label>
+    <input type="date" id="date" name="date" required>
+  </div>
 
-        <!-- 3. 하루 플레이 시간 -->
-        <div class="form-group">
-            <label for="daily-hours">3. 하루에 몇 시간 플레이하나요 *</label>
-            <select id="daily-hours" name="daily-hours" required>
-                <option value="" disabled selected>평균 시간을 선택하세요</option>
-                <option value="1시간 미만">1시간 미만</option>
-                <option value="1~2시간">1시간 이상 2시간 미만</option>
-                <option value="2~3시간">2시간 이상 3시간 미만</option>
-                <option value="3~4시간">3시간 이상 4시간 미만</option>
-                <option value="4~5시간">4시간 이상 5시간 미만</option>
-                <option value="5시간 이상">5시간 이상</option>
-            </select>
-        </div>
+  <div class="form-group">
+    <label for="weekly-games">일주일에 몇 개의 게임을 하나요?</label>
+    <select id="weekly-games" name="weeklyGames">
+      <option value="1개">1개</option>
+      <option value="2개">2개</option>
+      <option value="3개">3개</option>
+      <option value="4개">4개</option>
+      <option value="5개 이상">5개 이상</option>
+    </select>
+  </div>
 
-        <!-- 4. 게임 과금 여부 -->
-        <div class="form-group">
-            <label for="pay-status">4. 게임 과금을 하신 적 있으신가요 *</label>
-            <select id="pay-status" name="pay-status" required>
-                <option value="" disabled selected>선택하세요</option>
-                <option value="있다">있다</option>
-                <option value="없다">없다</option>
-            </select>
-        </div>
+  <div class="form-group">
+    <label for="daily-hours">하루에 몇 시간 플레이하나요?</label>
+    <select id="daily-hours" name="dailyHours">
+      <option value="1시간 미만">1시간 미만</option>
+      <option value="1~2시간">1~2시간</option>
+      <option value="2~3시간">2~3시간</option>
+      <option value="3~4시간">3~4시간</option>
+      <option value="4시간 이상">4시간 이상</option>
+    </select>
+  </div>
 
-        <!-- 5. 게임 과금 이유 -->
-        <div class="form-group">
-            <label for="pay-reason">5. 게임 과금 이유 (과금 경험이 있다면)</label>
-            <select id="pay-reason" name="pay-reason">
-                <option value="" disabled selected>선택하세요</option>
-                <option value="과시">과시하기 위해서</option>
-                <option value="강화">게임 캐릭터 강화 또는 성과를 얻기 위해서</option>
-                <option value="수집">수집과 콘텐츠를 즐기기 위해</option>
-                <option value="게임즐기기">게임 자체를 최대로 즐기기 위해</option>
-            </select>
-        </div>
+  <div class="form-group">
+    <label for="pay-status">과금을 해본 적 있으신가요?</label>
+    <select id="pay-status" name="payStatus">
+      <option value="네">네</option>
+      <option value="아니요">아니요</option>
+    </select>
+  </div>
 
-        <!-- 6. 과금 금액 -->
-        <div class="form-group">
-            <label for="pay-amount">6. 과금 금액</label>
-            <select id="pay-amount" name="pay-amount">
-                <option value="" disabled selected>선택하세요</option>
-                <option value="5만원 미만">5만원 미만</option>
-                <option value="5~10만원">5만원 이상 10만원 미만</option>
-                <option value="10~20만원">10만원 이상 20만원 미만</option>
-                <option value="20~30만원">20만원 이상 30만원 미만</option>
-                <option value="40~50만원">40만원 이상 50만원 미만</option>
-                <option value="50만원 이상">50만원 이상</option>
-            </select>
-        </div>
+  <div class="form-group">
+    <label for="pay-amount">과금 금액</label>
+    <select id="pay-amount" name="payAmount">
+      <option value="5만원 미만">5만원 미만</option>
+      <option value="5~10만원">5~10만원</option>
+      <option value="10~20만원">10~20만원</option>
+      <option value="20~30만원">20~30만원</option>
+      <option value="30~40만원">30~40만원</option>
+      <option value="50만원 이상">50만원 이상</option>
+    </select>
+  </div>
 
-        <!-- 7. 과금 비용 출처 -->
-        <div class="form-group">
-            <label for="pay-source">7. 과금 비용의 출처</label>
-            <select id="pay-source" name="pay-source">
-                <option value="" disabled selected>선택하세요</option>
-                <option value="근로소득">근로소득</option>
-                <option value="용돈">용돈</option>
-                <option value="저축">저축</option>
-                <option value="기타">기타</option>
-            </select>
-        </div>
+  <div class="form-group">
+    <label>과금을 하는 이유</label>
+    <div class="pay-reason">
+      <input type="radio" id="reason1" name="mood" value="과시" checked>
+      <label for="reason1">과시</label>
+      <input type="radio" id="reason2" name="mood" value="캐릭터 강화">
+      <label for="reason2">캐릭터 강화</label>
+      <input type="radio" id="reason3" name="mood" value="수집과 콘텐츠">
+      <label for="reason3">수집과 콘텐츠</label>
+      <input type="radio" id="reason4" name="mood" value="즐기기 위해">
+      <label for="reason4">즐기기 위해</label>
+    </div>
+  </div>
 
-        <!-- 제출 버튼 -->
-        <button type="submit" class="submit-btn">💝 제출하기</button>
-    </form>
-</main>
+  <button type="submit">기록하기</button>
+</form>
 
+
+            <section class="stats-section">
+                <h3>이번 달 통계</h3>
+                <div class="chart-container">
+                    <canvas id="mood-chart"></canvas>
+                </div>
+            </section>
+
+            <section class="records-section">
+                <div class="section-header">
+                    <h2> 과금요정 기록</h2>
+                    <button id="export-excel">엑셀로 내보내기</button>
+                </div>
+                <div class="records-list-container">
+                    <div class="records-header">
+                        <div>연령대</div>
+                        <div>날짜</div>
+                        <div>하루 플레이 타임</div>     
+                        <div>여부</div>
+                        <div>금액</div>
+                      <div>이유</div>
+                       
+                    </div>
+                    <div id="records-container">
+                        <!-- 기록 목록이 여기에 동적으로 추가됩니다. -->
+                    </div>
+                </div>
+            </section>
+        </main>
         <footer>
             <p>&copy; 과금요정. All rights reserved.</p>
         </footer>
