@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       dailyHours: formData.get('dailyHours'),
       payStatus: formData.get('payStatus'),
       payAmount: formData.get('payAmount'),
-      mood: formData.get('pay-reason')
+      payReason: formData.get('payReason')
     };
 
     try {
