@@ -240,7 +240,7 @@ button[type="submit"]:hover {
     text-align: center;
 }
 
-.record-game {
+.record-weeklyGame {
     font-size: 1.2rem;
     text-align: center;
 }
@@ -286,9 +286,9 @@ footer {
     .record-type::before { content: '종류: '; }
     .record-content::before { content: '내용: '; }
     .record-date::before { content: '날짜: '; }
-    .record-mood::before { content: '여부: '; }
-  .recorod-mood::before { content: '금액: '; }
-  .recorod-mood::before { content: '이유: '; }
+    .record-status::before { content: '여부: '; }
+  .recorod-amount::before { content: '금액: '; }
+  .recorod-reason::before { content: '이유: '; }
 
     .record-content {
         white-space: normal;
