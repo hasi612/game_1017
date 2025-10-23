@@ -70,17 +70,17 @@ textarea {
     resize: vertical;
 }
 
-.mood-selector {
+pay-reason {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
 
-.mood-selector input[type="radio"] {
+.pay-reason input[type="radio"] {
     display: none;
 }
 
-.mood-selector label {
+.pay-reason label {
     padding: 10px 15px;
     border: 1px solid var(--border-color);
     border-radius: 20px;
@@ -88,7 +88,7 @@ textarea {
     transition: all 0.3s ease;
 }
 
-.mood-selector input[type="radio"]:checked + label {
+.pay-reason input[type="radio"]:checked + label {
     background-color: var(--primary-color);
     color: var(--card-background);
     border-color: var(--primary-color);
